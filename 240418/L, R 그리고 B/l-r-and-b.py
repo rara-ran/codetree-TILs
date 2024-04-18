@@ -45,7 +45,9 @@ while q:
 score = []
 for i in range(4):
     nx, ny = x+dx[i], y+dy[i]
-    if visited[nx][ny] > 0:
-        score.append(visited[nx][ny])
+    if nx >= 0 and nx < 10 and ny >= 0 and ny < 10:
+
+        if visited[nx][ny] > 0:
+            score.append(visited[nx][ny])
 
 print(min(score)+1)

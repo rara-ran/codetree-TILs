@@ -12,9 +12,11 @@ num_arr = [x for x in number if x != mini]
 min_v = min(num_arr)
 
 state = [x for x in num_arr if x == min_v]
-if len(state) >= 2:
+if len(state) >= 2: # 두번째로 작은 수 여러개
     answer = -1
-else:
+elif not state:
+    answer = -1
+else: # 두번째로 작은 수 없는 경우도 구현
     answer = number.index(min_v) + 1
 
 print(answer)

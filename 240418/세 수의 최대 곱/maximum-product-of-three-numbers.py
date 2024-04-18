@@ -24,7 +24,7 @@ def make_maxV(n, number):
     elif len(plus_number) <= 1:
         if len(plus_number) == 1:
             return plus_number.pop()*minus_number.pop()*minus_number.pop()
-        else:
+        elif len(plus_number) == 0:
             return -minus_number.pop(0)*minus_number.pop(0)*minus_number.pop(0)
 
 

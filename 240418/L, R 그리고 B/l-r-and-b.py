@@ -33,21 +33,10 @@ while q:
             continue
         if (nx, ny) == nomap:
             continue
-        if maps[nx][ny] == '.' and not visited[nx][ny]:
+        if not visited[nx][ny]:
             visited[nx][ny] = visited[x][y] + 1
             q.append((nx, ny))
         
-        if (x, y) == end:
-            break
         
-        
-
-score = []
-for i in range(4):
-    nx, ny = x+dx[i], y+dy[i]
-    if nx >= 0 and nx < 10 and ny >= 0 and ny < 10:
-
-        if visited[nx][ny] > 0:
-            score.append(visited[nx][ny])
-
-print(min(score)+1)
+ex, ey = end
+print(visited[ex][ey]-1)

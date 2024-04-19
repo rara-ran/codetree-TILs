@@ -6,6 +6,9 @@ def install_wifi(n, m, number):
     if number.count(0) == n: # 아무도 안 살면
         return 0
 
+    if n <= m:
+        return 1
+
     wifi = 0
     people_idx = []
     idx = 0

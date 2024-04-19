@@ -31,8 +31,9 @@ def install_wifi(n, m, number):
                             number[i] = 0
                 people_idx = []
                 wifi += 1
+        if people_idx:
+            wifi += 1
 
-        # print(number)
     return wifi
 
 n, m = map(int, input().split())

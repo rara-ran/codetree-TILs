@@ -10,8 +10,12 @@ def install_wifi(n, m, number):
         idx += 1
 
         if people_idx == m:
-            for i in range(idx-m, idx+m+1):
-                number[i] = 0
+            if idx+m < n:
+                for i in range(idx-m, idx+m+1): # 인덱스 런타임 나는 경우도 고려
+                    number[i] = 0
+            else: # 
+                for i in range(idx-m, n):
+                    number[i] = 0
             people_idx = 0
             wifi += 1
     return wifi

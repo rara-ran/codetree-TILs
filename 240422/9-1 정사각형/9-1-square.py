@@ -6,7 +6,7 @@ answer = []
 s = ''
 
 for i in range(n**2+1):
-    if len(s) == 4:
+    if len(s) == n:
         answer.append(s)
         s = ''
     s += str(num[i%9])    

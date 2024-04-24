@@ -48,13 +48,17 @@ rgb_count, rg_count = 0, 0
 for i in range(n):
     for j in range(n):
         if rgb_visited[i][j] == 0 and maps[i][j] == 'B':
+            rgb_visited[i][j] = 1
             make_rgb('B', i, j)
             rgb_count+=1
             rg_count+=1
+
         elif rgb_visited[i][j] == 0 and maps[i][j] == 'R':
+            rgb_visited[i][j] = 1
             make_rgb('R', i, j)
             rgb_count += 1
         elif rgb_visited[i][j] == 0 and maps[i][j] == 'G':
+            rgb_visited[i][j] = 1
             make_rgb('G', i, j)
             rgb_count += 1
 

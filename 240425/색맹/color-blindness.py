@@ -42,7 +42,7 @@ def make_rg(tx,ty): # R, G 하나로
 n = int(input())
 maps = [list(input()) for _ in range(n)]
 rgb_visited = [[0]*n for _ in range(n)]
-rg_visited = [[0]*n for _ in range(n)]
+
 rgb_count, rg_count = 0, 0
 
 for i in range(n):

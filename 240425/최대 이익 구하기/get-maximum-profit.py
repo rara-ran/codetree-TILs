@@ -1,6 +1,5 @@
 n = int(input())
 dp = [0]*(n+1)
-max_v = 0
 
 T, P = [], []
 
@@ -8,10 +7,12 @@ for _ in range(n):
     t, p = map(int, input().split())
     T.append(t); P.append(p)
 
+maxV = 0
 for i in range(n):
-    if T[i]+i > n:
+    maxV = max(dp[i], maxV)
+    if i + T[i] > n:
         continue
-    max_v = max(dp[i], max_v)
-    dp[i+T[i]] = max(dp[i+T[i]], max_v + P[i])
+    dp[i+T[i]] = max(dp[i+T[i]], maxV + P[i])
+    print(i, maxV, dp)
 
 print(max(dp))

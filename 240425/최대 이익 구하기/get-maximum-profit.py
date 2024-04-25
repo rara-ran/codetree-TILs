@@ -13,6 +13,5 @@ for i in range(n):
     if i + T[i] > n:
         continue
     dp[i+T[i]] = max(dp[i+T[i]], maxV + P[i])
-    print(i, maxV, dp)
 
 print(max(dp))

@@ -6,10 +6,10 @@ def stair(n):
         return memo[n]
     if n == 2 or n == 3:
         return 1
-    if n == 1:
+    elif n == 1:
         return 0
     else:
-        memo[n] = stair[n-2] + stair[n-3]
+        memo[n] = stair(n-2) + stair(n-3)
     
     return memo[n]
 

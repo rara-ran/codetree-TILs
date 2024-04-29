@@ -7,4 +7,4 @@ def stair(n):
         return stair(n-2) + stair(n-3)
 
     
-print(stair(n))
+print(stair(n)%10007)

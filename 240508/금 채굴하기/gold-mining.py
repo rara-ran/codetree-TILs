@@ -64,8 +64,9 @@ for k in range(n):
         break
 
     gold_set = set(make_gold(k, maps, n))
-    ans_arr = [x for x in gold_set if k**2 + (k+1)**2 <= x*m]
-    if ans_arr:
-        answer.append(max(ans_arr))
+    if gold_set:
+        ans_arr = [x for x in gold_set if k**2 + (k+1)**2 <= x*m]
+        if ans_arr:
+            answer.append(max(ans_arr))
 
 print(max(answer))

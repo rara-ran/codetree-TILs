@@ -20,19 +20,21 @@ def make_gold(k, maps, n):
     else:
         for i in range(n):
             for j in range(n):
-
                 gold_cnt = 0
-                
+        
                 for idx in range(k):
                     for idy in range(j-idx, j+idx+1):
+
                         if i-k+idx < 0 or i-k+idx >= n or idy >= n or idy < 0:
                             continue
                         if maps[i-k+idx][idy] == 1:
                             gold_cnt += 1
+
                         if i+k-idx < 0 or i+k-idx >= n:
                             continue
                         if maps[i+k-idx][idy] == 1:
                             gold_cnt += 1
+
                 for c in range(j-k, j+k+1):
                     if c < 0 or c >= n:
                         continue
@@ -58,7 +60,7 @@ answer = []
 if cnt >= 1:
     answer.append(1)
 
-for k in range(1, n):
+for k in range(1, n+1):
     if k**2 + (k+1)**2 > cost:
         break
 
@@ -67,6 +69,7 @@ for k in range(1, n):
         ans_arr = [x for x in gold_set if k**2 + (k+1)**2 <= x*m]
     if ans_arr:
         answer.append(max(ans_arr))
+    
 
 if answer:
     print(max(answer))

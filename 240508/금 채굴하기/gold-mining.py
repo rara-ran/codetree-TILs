@@ -3,10 +3,7 @@ def make_gold(k, maps, n):
     arr = []
     dx, dy = [k,-k,0,0], [0,0,k,-k] # 상하좌우
 
-    if k == 0:
-        return [1]
-
-    elif k == 1:
+    if k == 1:
         for i in range(n):
             for j in range(n):
                 gold_cnt = 0
@@ -26,21 +23,21 @@ def make_gold(k, maps, n):
 
                 gold_cnt = 0
                 
-                for d in range(4):
-                    
-                    if i+dx[d] < 0 or j+dy[d] < 0 or i+dx[d] >= n or j+dy[d] >= n:
-                        continue
-                    if maps[i+dx[d]][j+dy[d]] == 1:
-                        gold_cnt += 1
-                    
-
-                for r in range(i-(k-1), i+(k-1)+1):
-                    for c in range(j-(k-1), j+(k-1)+1):
-                        
-                        if r < 0 or c < 0 or r >= n or c >= n:
+                for idx in range(k):
+                    for idy in range(j-idx, j+idx+1):
+                        if i-k+idx < 0 or i-k+idx >= n or idy >= n or idy < 0:
                             continue
-                        if maps[r][c] == 1:
+                        if maps[i-k+idx][idy] == 1:
                             gold_cnt += 1
+                        if i+k-idx < 0 or i+k-idx >= n:
+                            continue
+                        if maps[i+k-idx][idy] == 1:
+                            gold_cnt += 1
+                for c in range(j-k, j+k+1):
+                    if c < 0 or c >= n:
+                        continue
+                    if maps[i][c] == 1:
+                        gold_cnt += 1
                 
                 arr.append(gold_cnt)
         return arr
@@ -58,8 +55,10 @@ for i in range(n):
 
 cost = m*cnt
 answer = []
+if cnt >= 1:
+    answer.append(1)
 
-for k in range(n):
+for k in range(1, n):
     if k**2 + (k+1)**2 > cost:
         break
 

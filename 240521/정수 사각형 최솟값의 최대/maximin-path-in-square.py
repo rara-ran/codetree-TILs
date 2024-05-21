@@ -15,4 +15,4 @@ for i in range(1,n):
     for j in range(1,n):
         dp[i][j] = min(max(dp[i-1][j], dp[i][j-1]), maps[i][j])
     
-print(max(dp[n-1]))
+print(dp[n-1][n-1])

@@ -1,3 +1,7 @@
+import sys
+
+sys.setrecursionlimit(10**5)
+
 def is_range(x, y):
     return 0<=x and x<n and 0<=y and y<m
 
@@ -33,7 +37,6 @@ answer = [0]*(K_max+1)
 answer[0] = -100
 
 
-
 for k_val in range(1, K_max+1):
     sector_cnt = 0
     visited = [[0]*m for _ in range(n)]
@@ -46,6 +49,7 @@ for k_val in range(1, K_max+1):
                 sector_cnt += 1
     
     answer[k_val] = sector_cnt
+    
     
 
 max_v = max(answer)

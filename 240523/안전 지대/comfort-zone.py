@@ -30,6 +30,9 @@ for mmm in maps:
             
 K_max = max(max_arr)
 answer = [0]*(K_max+1)
+answer[0] = -100
+
+
 
 for k_val in range(1, K_max+1):
     sector_cnt = 0
@@ -46,4 +49,4 @@ for k_val in range(1, K_max+1):
     
 
 max_v = max(answer)
-print(max_v, answer.index(max_v))
+print(answer.index(max_v), max_v)

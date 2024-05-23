@@ -1,6 +1,6 @@
 import sys
 
-sys.setrecursionlimit(10**5)
+sys.setrecursionlimit(3000)
 
 def is_range(x, y):
     return 0<=x and x<n and 0<=y and y<m
